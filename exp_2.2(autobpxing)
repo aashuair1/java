@@ -1,0 +1,30 @@
+// Part A: Autoboxing and Unboxing Example
+import java.util.*;
+
+public class PartA {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.println("Enter integers (type 'end' to stop):");
+        while (true) {
+            String input = sc.next();
+            if (input.equalsIgnoreCase("end")) {
+                break;
+            }
+            // Parse string to int
+            int num = Integer.parseInt(input); // parsing
+            // Autoboxing: int -> Integer
+            numbers.add(num);
+        }
+
+        int sum = 0;
+        // Unboxing: Integer -> int during addition
+        for (Integer val : numbers) {
+            sum += val;
+        }
+
+        System.out.println("Sum of integers: " + sum);
+        sc.close();
+    }
+}
